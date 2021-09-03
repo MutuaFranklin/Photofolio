@@ -1,0 +1,29 @@
+  <!-- Modal -->
+  <div class="modal fade" id="imageEnlarge{{image_item.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLongTitle">{{image_item.image_name}}</h3>
+                  <h4 class="modal-title">{{image_item.location}}</h4>
+                  <h5 class="modal-title">{{image_item.post_date}}</h5>
+
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <img src="{{image_item.image.url}}" class="card-img-top m-2" alt="..."
+                      style="height: 24rem; width: 29rem;">
+
+                  <p>{{image_item.image_description}}</p>
+                  <p>{{image_item.image_location}}</p>
+              </div>
+              <div class="modal-footer">
+                  <input class="form-control input-lg" type="text" value="{{image_item.image.url}}"
+                      id="url">
+                  <button class="btn btn-success btn-sm"
+                      onclick="copyToClipboard('{{image_item.id}}.url')">Copy</button>
+                  <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close
+              </div>
+          </div>
+      </div>
+  </div>
