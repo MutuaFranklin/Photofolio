@@ -2,7 +2,7 @@
 {% block content %}
 {{ block.super}}
 
-<div class="container-fluid  gallery">
+<div class="container  gallery">
     <div class="container">
         <h3>Gallery</h3>
         
@@ -16,11 +16,10 @@
          </div>
   
         <div class="row mt-3">
-            {%for image_item in location_images %}
             <div class="row">
-                <h6 class="text-center">{{image_item.image_location}} Images</h6>
+                <h6 class="text-center">{{location.location_name}} Images</h6>
             </div>
-
+            {%for image_item in location_images %}
             <img src="{{image_item.image.url}}" class="card-img-top m-2" alt="..." style="height: 20rem; width: 25rem; border-radius: 6px;"
                 data-bs-toggle="modal" data-bs-target="#imageEnlarge{{image_item.id}}">
 

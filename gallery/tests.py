@@ -62,15 +62,18 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images)>0)
 
+    def test_display_all_image_items(self):
+            self.image.display_all_image_items()
+            images = Image.objects.all()
+            self.assertTrue(len(images)>0)
+
     def test_delete_method(self):
         self.image.delete_image()
         images = Image.objects.all()
         self.assertTrue(len(images)==0)
 
-    def test_display_all_image_items(self):
-        self.image.display_all_image_items()
-        images = Image.objects.all()
-        self.assertTrue(len(images)>0)
+    
+    
 
     def test_search_by_category(self):
         self.image.search_by_category(self.test_category)

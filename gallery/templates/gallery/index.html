@@ -1,8 +1,49 @@
 {%extends 'gallery/base.html'%}
+{% load static%}
+
 {% block content %} 
     {{ block.super}}
 
 <div class="container-fluid  home">
+
+    <div class="col-md-2 arrow">
+        <a href="#gallery"><img src="{% static 'images/arrow2.png' %}"  alt=" mouse_click" id="mouseClick" style="height: 10rem;"></a>
+    </div>
+
+</div>
+
+<div class="container  gallery" id="gallery">
+    <div class="container">
+        <h3>Gallery</h3>
+        <div class="col-md-12">
+            <div class="col-md-12" id="locations">
+                {% for location in locations %}
+                    <a class="btn btn-outline-success" id="btn"
+                       href="/location/{{location.location_name}}">{{location.location_name}}</a>
+                {%endfor%}
+            </div>
+         </div>
+  
+        <div class="row mt-3">
+            {%for image_item in images %}
+
+            <img src="{{image_item.image.url}}" class="card-img-top m-2" alt="image" style="height: 20rem; width: 25rem;"
+                data-bs-toggle="modal" data-bs-target="#imageEnlarge{{image_item.id}}">
+                <!-- <img src="{{image_item.image.url}}" style="background-color: blanchedalmond; height: 20rem;" alt=""> -->
+
+            {% include "gallery/modal.html" %}
+
+            {% empty %}
+            <div class="row">
+                <h6 class="text-center">There No Image Items</h6>
+            </div>
+
+            {%endfor%}
+        </div>
+    </div>
+
+
+
 
 </div>
 

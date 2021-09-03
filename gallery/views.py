@@ -6,9 +6,12 @@ from django.views.generic import ListView, DetailView
 
 def home(request):
     title ='Home'
+    images = Image.display_all_image_items()
+    locations= Location.display_all_image_locations()
     context = {
         "title": title, 
-        
+        "images":images,
+        "locations":locations
     }
     return render(request, 'gallery/index.html',context)
 
