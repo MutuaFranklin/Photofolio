@@ -1,0 +1,46 @@
+{%extends 'gallery/base.html'%}
+{% block content %}
+{{ block.super}}
+
+<div class="container-fluid  gallery">
+    <div class="container">
+        <h3>Gallery</h3>
+        
+        <div class="col-md-5">
+            <div id="locations">
+                {% for location in images %}
+                    <a class="btn btn-primary" id="btn"
+                       href="location/{{location.location_name}}">{{location.location_name}}</a>
+                {%endfor%}
+             </div>
+         </div>
+  
+        <div class="row mt-3">
+            {%for image_item in location_images %}
+            <div class="row">
+                <h6 class="text-center">{{image_item.image_location}} Images</h6>
+            </div>
+
+            <img src="{{image_item.image.url}}" class="card-img-top m-2" alt="..." style="height: 20rem; width: 25rem; border-radius: 6px;"
+                data-bs-toggle="modal" data-bs-target="#imageEnlarge{{image_item.id}}">
+
+
+            {% include "gallery/modal.html" %}
+
+            {% empty %}
+            <div class="row">
+                <h2 class="text-center">There No Image Items</h2>
+            </div>
+
+            {%endfor%}
+            
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock %}
+
+<!-- <button><a href="{% url 'details' image.pk%}"></a></button> -->
