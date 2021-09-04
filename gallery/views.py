@@ -1,4 +1,4 @@
-from gallery.models import Image, Location
+from gallery.models import Categories, Image, Location
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -8,10 +8,12 @@ def home(request):
     title ='Home'
     images = Image.display_all_image_items()
     locations= Location.display_all_image_locations()
+    categories = Categories.display_all_image_Categories()
     context = {
         "title": title, 
         "images":images,
-        "locations":locations
+        "locations":locations,
+        "categories": categories
     }
     return render(request, 'gallery/index.html',context)
 
@@ -45,8 +47,26 @@ class imageDetailsView(DetailView):
 
 def image_location(request, location_name):
     images = Image.filter_by_location(location_name)
-    print(images)
-    return render(request, 'gallery/location.html', {'location_images': images})
+    # print(images)
+    context = {
+        "title" : location_name,
+        "header" : location_name,
+        'location_images': images
+       
+    }
+    return render(request, 'gallery/location.html', context)
+
+def image_category(request, category):
+    images = Image.filter_by_category(category)
+    # print(images)
+    
+    context = {
+        "title" : category,
+        "header" : category,
+        'category_images': images
+       
+    }
+    return render(request, 'gallery/category.html', context)
 
 
 def search_results(request):
