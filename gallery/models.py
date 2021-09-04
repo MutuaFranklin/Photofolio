@@ -38,6 +38,10 @@ class Categories(models.Model):
         self.delete()
 
     @classmethod
+    def display_all_image_Categories(cls):
+        return cls.objects.all()
+
+    @classmethod
     def update_category(cls,id,category):
         cls.objects.filter(id = id).update(category = category)
 
@@ -82,6 +86,14 @@ class Image(models.Model):
             return image
         except Exception:
             return  "No images found in your filter location"
+
+    @classmethod
+    def filter_by_category(cls, filter_category):
+        try:
+            image= cls.objects.filter(image_category__category__icontains=filter_category)
+            return image
+        except Exception:
+            return  "No images found in your filter category"
 
 
     class Meta:
