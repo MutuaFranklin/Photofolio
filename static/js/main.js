@@ -11,3 +11,19 @@ function copyToClipboard() {
 
     alert("Successfully copied Image link!");
 }
+
+
+
+function showLocations() {
+    document.getElementById("locations").style.display = " block"; 
+    document.getElementById("categories").style.display = "none"; 
+
+
+}
+
+function showCategories() {
+    document.getElementById("categories").style.display = " block";
+    document.getElementById("locations").style.display = "none";
+
+
+}
