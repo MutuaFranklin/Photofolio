@@ -6,20 +6,20 @@
   text-decoration: none;
 }
 body {
-  font-family: 'Roboto', sans-serif;
    background: url(https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
    background-size: cover;
    transition: all .5s;
    scroll-behavior: smooth;
    background-attachment:fixed;
    background-position:center;
+
 }
 
 .navbar-brand{
   font-size: 2rem !important;
   font-weight: 600;
   /* font-family: 'Berkshire Swash', cursive; */
-  font-family: 'Norican', cursive;
+  font-family: 'Black Ops One', cursive;  
   color: rgb(10, 177, 10) !important;
   margin-left: 3%;
 }
@@ -116,7 +116,7 @@ section{
 } 
 
 .home .arrow{
-  margin-top: 35%;
+  margin-top: 39%;
   margin-left: 5%;
 }
 
@@ -138,10 +138,6 @@ section{
 }
 
 
-.container{
-  
-
-}
 .gallery{
     margin-top:3%;
     background-color: rgb(15, 15, 15, 0.9);
@@ -154,10 +150,22 @@ section{
 
 .gallery h3{
   text-align: center;
-  margin: 3%;
+  margin-top: 3%;
+  color: white;  
+  font-family: 'Black Ops One', cursive;  
+}
+
+.gallery h6{
+  text-align: center;
+  margin-top: 3%;
   color: white;    
 }
 
+.gallery p{
+  text-align: center;
+  font-family: 'Tangerine', cursive;
+  font-size: 3rem;
+}
 
 .modal-dialog{
     width: 50rem;
@@ -180,4 +188,12 @@ section{
 
 .modal-header{
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card #categories{
+  display: none;
+
 }
