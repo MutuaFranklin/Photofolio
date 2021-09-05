@@ -1,0 +1,56 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .dropdown #drop{
+          font-size: 10px;
+      }
+    #main-navbar{
+      width: 100%;
+    }
+      
+    #main-navbar .navbar-toggler {
+      border: none;
+      border-radius: 0px;
+      padding: 0px;
+      cursor: pointer;
+      margin-top: 27px;
+      margin-bottom: 23px;
+    }
+    .navbar-brand{
+      margin-left: 20px;
+  }
+  
+  
+  
+  #main-navbar .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
+      opacity: 1;
+    }
+  
+    #main-navbar .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    #main-navbar .navbar-toggler[aria-expanded="true"] span:first-child {
+      transform: rotate(-45deg);
+      position: relative;
+      top: 7.5px;
+    }
+  
+   #main-navbar .navbar-toggler[aria-expanded="true"] span:last-child {
+      transform: rotate(45deg);
+      bottom: 6px;
+      position: relative;
+    }
+  
+    #main-navbar .navbar-toggler span{
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #ffc107 ;
+      margin: auto;
+      margin-bottom: 4px;
+      margin-right: 5px;
+      transition: all 400ms linear;
+      cursor: pointer;
+    }
+}  
