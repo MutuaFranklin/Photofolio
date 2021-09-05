@@ -19,6 +19,14 @@
     .navbar-brand{
       margin-left: 20px;
   }
+  form{
+      width: 22rem;
+
+  }
+
+  form input{
+      font-size: 14px !important;
+  }
   
   
   
@@ -46,11 +54,50 @@
       display: block;
       width: 25px;
       height: 3px;
-      background: #ffc107 ;
+      background: rgb(10, 177, 10);
       margin: auto;
       margin-bottom: 4px;
       margin-right: 5px;
       transition: all 400ms linear;
       cursor: pointer;
     }
+
+    .home{
+        height: 35rem;
+    }
+
+    .home .arrow{
+        margin-top: 100%;
+        margin-left: 5%;
+      }
+
+    #btn{
+        height: 44px;
+        width: 135px;
+        margin: 5px;
+    }
+
+    .card #home{
+        height: 40px;
+        width: 87px;
+        font-size: 10px !important;
+        margin: -4px;
+    }
+
+    .card #locationBtn, .card #categoryBtn{
+        height: 60px;
+        width: 112px;
+        margin: -4px;
+        font-size: 10px !important;
+
+    }
+
+    .modal-image{
+        width: 19rem !important;
+    }
+
+    .input-lg{
+        font-size: 12px !important;
+    }
+
 }  
