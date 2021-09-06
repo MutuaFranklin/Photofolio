@@ -79,7 +79,7 @@ As an Admin, i would like to:
 
 ## Live link
 
-Live link: [Photofolio live link](https://blogbyfrank.herokuapp.com/)
+Live link: [Photofolio live link](https://myphotofolio.herokuapp.com/)
 
 ## Support and contact details
 
