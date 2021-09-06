@@ -66,7 +66,7 @@ class ImageTestClass(TestCase):
         self.location = Location(location_name="Westlands")
         self.location.save_location()
 
-        self.image = Image(id=1, image_name="Kanye",image_category=self.test_category,image_location=self.location,)
+        self.image = Image(id=1, image = 'kanye.jpg',image_name="Kanye",image_category=self.test_category,image_location=self.location,)
         self.image.save_image()
 
     def tearDown(self):
@@ -83,11 +83,13 @@ class ImageTestClass(TestCase):
         images = self.image.display_all_image_items()
         self.assertTrue(len(images)>0)
 
-    # def test_update_image(self):
-    #     self.image.save_image()
-    #     self.image.update_image(self.image.id, 'Nas')
-    #     updated_image = Image.objects.filter('Nas')
-    #     self.assertEqual(updated_image.image_name, 'Nas')
+    def test_update_image(self):
+        self.image.save_image()
+        self.image.update_image(self.image.id, 'images/drake.jpg')
+        updated_image = Image.objects.filter(image='images/drake.jpg')
+        self.assertTrue(len(updated_image) > 0)
+
+        
 
     def test_delete_method(self):
         self.image.delete_image()

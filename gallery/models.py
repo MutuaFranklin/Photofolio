@@ -70,7 +70,7 @@ class Image(models.Model):
 
     @classmethod
     def update_image(cls,id,image):
-        return cls.objects.filter(id=id).update(photo=image)
+        return cls.objects.filter(id=id).update(image=image)
 
     @classmethod
     def display_all_image_items(cls):
