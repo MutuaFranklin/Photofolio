@@ -15,6 +15,9 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,6 +37,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# adding config
+cloudinary.config( 
+  cloud_name = "dlqnalelc", 
+  api_key = "574855723933665", 
+  api_secret = "FUIyPX8RTEtB0_dphqdn6b-zzQw" 
+)
 
 # Application definition
 
@@ -46,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gallery',
     'bootstrap5',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
