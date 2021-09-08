@@ -4,29 +4,29 @@ import datetime as dt
 # Create your tests here.
 class LocationTestClass(TestCase):
     def setUp(self):
-        self.Westlands = Location(location_name='Westlands')
+        self.location = Location(location_name='Westlands')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.Westlands,Location))
+        self.assertTrue(isinstance(self.location,Location))
 
     def tearDown(self):
         Location.objects.all().delete()
 
     def test_save_method(self):
-        self.Westlands.save_location()
+        self.location.save_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations)>0)
 
     def test_delete_method(self):
-        self.Westlands.save_location()
-        self.Westlands.delete_location()
+        self.location.save_location()
+        self.location.delete_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations)==0)
 
     
     def test_update_location(self):
-        self.Westlands.save_location()
-        self.Westlands.update_location(self.Westlands.id, 'Parklands')
+        self.location.save_location()
+        self.location.update_location(self.location.id, 'Parklands')
         updated_location = Location.objects.get(location_name = "Parklands")
         self.assertEqual(updated_location.location_name, 'Parklands')
 
@@ -85,9 +85,10 @@ class ImageTestClass(TestCase):
 
     def test_update_image(self):
         self.image.save_image()
-        self.image.update_image(self.image.id, 'images/drake.jpg')
-        updated_image = Image.objects.filter(image='images/drake.jpg')
-        self.assertTrue(len(updated_image) > 0)
+        image_id = Image.objects.last().id
+        Image.update_image(image_id,'drake' )
+        updated_image = Image.objects.get(id=image_id)
+        self.assertEqual(updated_image.image_name,'drake')
 
         
 
